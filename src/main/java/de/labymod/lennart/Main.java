@@ -28,9 +28,10 @@ public class Main extends LabyModAddon {
 
     @Override
     public void onEnable() {
-        System.out.println("Timolia-Addon enabled!");
-
         INSTANCE = this;
+
+        //Enable Message
+        System.out.println("Timolia-Addon enabled!");
 
         //GUI Entry
         timolia = new ModuleCategory("Timolia", true, new ControlElement.IconData(new ResourceLocation("icons/timolia/timolia128.png")));
