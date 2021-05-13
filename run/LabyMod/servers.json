@@ -1,5 +1,10 @@
 {
   "serverConfigs": {
-    "timolia": {}
+    "timolia": {
+      "displayServer": false,
+      "displayEnemy": true,
+      "displayKit": true,
+      "displayMap": true
+    }
   }
 }
