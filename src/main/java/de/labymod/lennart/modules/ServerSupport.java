@@ -34,13 +34,21 @@ public class ServerSupport extends Server {
     public void addModuleLines(List<DisplayLine> lines) {
         super.addModuleLines(lines);
         try {
-            lines.add(new DisplayLine("Server", Collections.singletonList(ColoredTextModule.Text.getText(TimoliaAddon.getINSTANCE().getLatestserver()))));
-            if (MessageEnemyReceiveListener.enemy != null)
-                lines.add(new DisplayLine("Enemy", Collections.singletonList(ColoredTextModule.Text.getText(MessageEnemyReceiveListener.enemy))));
-            if (MessageEnemyReceiveListener.kit != null)
-                lines.add(new DisplayLine("Kit", Collections.singletonList(ColoredTextModule.Text.getText(MessageEnemyReceiveListener.kit))));
-            if (latestMap != null)
-                lines.add(new DisplayLine("Map", Collections.singletonList(ColoredTextModule.Text.getText(latestMap))));
+            if (displayServer) {
+                lines.add(new DisplayLine("Server", Collections.singletonList(ColoredTextModule.Text.getText(TimoliaAddon.getINSTANCE().getLatestserver()))));
+            }
+            if (displayEnemy) {
+                if (MessageEnemyReceiveListener.enemy != null)
+                    lines.add(new DisplayLine("Enemy", Collections.singletonList(ColoredTextModule.Text.getText(MessageEnemyReceiveListener.enemy))));
+            }
+            if (displayKit) {
+                if (MessageEnemyReceiveListener.kit != null)
+                    lines.add(new DisplayLine("Kit", Collections.singletonList(ColoredTextModule.Text.getText(MessageEnemyReceiveListener.kit))));
+            }
+           if (displayMap) {
+               if (latestMap != null)
+                   lines.add(new DisplayLine("Map", Collections.singletonList(ColoredTextModule.Text.getText(latestMap))));
+           }
         } catch (Exception error) {
             error.printStackTrace();
         }
