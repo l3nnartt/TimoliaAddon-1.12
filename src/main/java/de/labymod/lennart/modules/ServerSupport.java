@@ -94,7 +94,6 @@ public class ServerSupport extends Server {
 
     public void reset() {
         super.reset();
-        //this.variable = null;
     }
 
     public void loadConfig() {
