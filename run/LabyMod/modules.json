@@ -495,9 +495,11 @@
       }
     },
     "ServerSupportModule": {
-      "enabled": [],
+      "enabled": [
+        "INGAME"
+      ],
       "regions": [
-        "TOP_LEFT",
+        "TOP_CENTER",
         "TOP_LEFT"
       ],
       "alignment": [
@@ -505,11 +507,11 @@
         "DEFAULT"
       ],
       "x": [
-        2.0,
+        -88.5,
         0.0
       ],
       "y": [
-        4.0,
+        2.0,
         0.0
       ],
       "useExtendedSettings": false,

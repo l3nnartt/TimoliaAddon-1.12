@@ -1,6 +1,6 @@
 package de.labymod.lennart.listener;
 
-import de.labymod.lennart.Main;
+import de.labymod.lennart.TimoliaAddon;
 import net.labymod.api.events.TabListEvent;
 
 public class TablistHeaderListener implements TabListEvent {
@@ -10,7 +10,7 @@ public class TablistHeaderListener implements TabListEvent {
             String[] servername = s.split("§6");
             String serveroutput = servername[servername.length-1];
             serveroutput = serveroutput.substring(0,serveroutput.length()-4);
-            Main.INSTANCE.latestserver = serveroutput;
+            TimoliaAddon.INSTANCE.latestserver = serveroutput;
         }
     }
 }

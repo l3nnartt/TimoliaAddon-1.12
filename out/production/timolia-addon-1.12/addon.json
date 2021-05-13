@@ -1,8 +1,8 @@
 {
   "uuid": "%uuid%",
-  "name": "Timolia Addon (Inoffical)",
-  "mainClass": "de.labymod.lennart.Main",
-  "description": "Inoffical Labymod Addon for Timolia.de",
+  "name": "Timolia",
+  "mainClass": "de.labymod.lennart.TimoliaAddon",
+  "description": "This Addon adds some Server Support Features for Timolia.de",
   "version": 1,
   "author": "L3nnart_",
   "category": 3,

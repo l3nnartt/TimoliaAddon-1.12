@@ -1,3 +1,5 @@
 {
-  "serverConfigs": {}
+  "serverConfigs": {
+    "timolia": {}
+  }
 }
