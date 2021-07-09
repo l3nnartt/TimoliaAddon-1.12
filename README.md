@@ -1,6 +1,12 @@
 # Labymod Timolia Addon 1.12.2
 
 ## Download & Einrichtung
+
+Seit dem 09.07.2021 gibt es das Addon außerdem im Labymod Store, dort könnt ihr es Problemlos herunterladen und müsst nur 1x das Spiel neustarten.
+Anschließend habt ihr die neuste Version des Addons.
+
+### Alternative Installation
+
 Lade dir zuerst die neuste Version des Addons herunter.</br>
 https://github.com/l3nnartt/timolia-addon-1.12/releases
 
