@@ -11,7 +11,7 @@ Lade dir zuerst die neuste Version des Addons herunter.</br>
 https://github.com/l3nnartt/timolia-addon-1.12/releases
 
 Die heruntergeladene JAR Datei in den Appdata Ordner von Minecraft(``.minecraft\LabyMod\addons-1.12``) Ordner verschieben. <br>
-Anschließend Minecraft muss Minecraft einmal neugestartet werden, und das Addon wurde installiert. <br>
+Anschließend muss Minecraft einmal neugestartet werden, danach ist das Addon vollständig installiert. <br>
 <br>
 Solltet ihr das Addon Updaten wollen, so löscht ihr die alte Version(.jar Datei) aus eurem Ordner und verschiebt die neuere Version in diesen Ordner.
 
