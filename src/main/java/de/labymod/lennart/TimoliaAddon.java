@@ -22,7 +22,6 @@ public class TimoliaAddon extends LabyModAddon {
     @Override
     public void onEnable() {
         INSTANCE = this;
-
         gson = new GsonBuilder().setPrettyPrinting().create();
         addonConfig = AddonConfig.read();
 

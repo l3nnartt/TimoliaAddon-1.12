@@ -11,7 +11,6 @@ import java.util.List;
 public class AddonConfig {
 
     private final List<String> servers = new ArrayList<>();
-
     private AddonConfig(){};
 
     public static AddonConfig read() {

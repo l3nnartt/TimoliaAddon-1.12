@@ -1,6 +1,5 @@
 package de.labymod.lennart.listener;
 
-
 import de.labymod.lennart.TimoliaAddon;
 import net.labymod.api.events.MessageReceiveEvent;
 
@@ -50,6 +49,7 @@ public class MessageEnemyReceiveListener implements MessageReceiveEvent {
                 enemy = null;
                 kit = null;
             }
+
         } return false;
     }
 }

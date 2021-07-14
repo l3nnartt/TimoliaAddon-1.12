@@ -7,6 +7,7 @@ import net.minecraft.client.Minecraft;
 import java.util.List;
 
 public class TablistHeaderListener implements TabListEvent {
+
     @Override
     public void onUpdate(Type type, String header, String s1) {
         if (header.contains("Du spielst auf")) {

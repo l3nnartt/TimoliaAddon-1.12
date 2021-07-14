@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5aff070c-9abb-44a0-9d64-c705a75f3ba4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/timolia-addon-1.12/assets/minecraft/icons/timolia/enemy128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/timolia-addon-1.12/assets/minecraft/icons/timolia/map128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/timolia-addon-1.12/assets/minecraft/icons/timolia/pxlspace128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/timolia-addon-1.12/assets/minecraft/icons/timolia/stats128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/LabyMod/servers.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/LabyMod/servers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/config/splash.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-    </list>
+    <list default="true" id="5aff070c-9abb-44a0-9d64-c705a75f3ba4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
