@@ -9,12 +9,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddonConfig {
+public class ServerConfig {
 
     private final List<String> servers = new ArrayList<>();
-    private AddonConfig(){};
+    private ServerConfig(){};
 
-    public static AddonConfig read() {
+    public static ServerConfig read() {
         URL url = Resources.getResource("servers.json");
         String content = null;
         try {
@@ -23,7 +23,7 @@ public class AddonConfig {
             e.printStackTrace();
         }
 
-        return TimoliaAddon.INSTANCE.gson.fromJson(content, AddonConfig.class);
+        return TimoliaAddon.instance.gson.fromJson(content, ServerConfig.class);
     }
 
     public List<String> getServers() {

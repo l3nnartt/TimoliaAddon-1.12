@@ -14,12 +14,12 @@ public class TablistHeaderListener implements TabListEvent {
             String[] servername = header.split("§6");
             String serveroutput = servername[servername.length-1];
             serveroutput = serveroutput.substring(0,serveroutput.length()-4);
-            TimoliaAddon.INSTANCE.latestserver = serveroutput;
+            TimoliaAddon.instance.latestServer = serveroutput;
         }
 
         if (containsTimoliaServer(header)) {
             Minecraft.getMinecraft().player.sendChatMessage("/v");
-            TimoliaAddon.getINSTANCE().setMapAnswer(true);
+            TimoliaAddon.getInstance().setMapAnswer(true);
         } ServerSupport.latestMap = null;
     }
 
@@ -28,7 +28,7 @@ public class TablistHeaderListener implements TabListEvent {
     }
 
     private boolean containsTimoliaServer(String s) {
-        List<String> serverList = TimoliaAddon.getINSTANCE().getAddonConfig().getServers();
+        List<String> serverList = TimoliaAddon.getInstance().getAddonConfig().getServers();
         for (String server : serverList) {
             if (containsTimoliaServer(server, s)) {
                 return true;

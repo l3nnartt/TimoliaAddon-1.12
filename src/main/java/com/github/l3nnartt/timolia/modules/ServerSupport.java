@@ -40,7 +40,7 @@ public class ServerSupport extends Server {
         super.addModuleLines(lines);
         try {
             if (displayServer) {
-                lines.add(new DisplayLine("Server", Collections.singletonList(ColoredTextModule.Text.getText(TimoliaAddon.getINSTANCE().getLatestserver()))));
+                lines.add(new DisplayLine("Server", Collections.singletonList(ColoredTextModule.Text.getText(TimoliaAddon.getInstance().getLatestServer()))));
             }
             if (displayEnemy) {
                 if (MessageEnemyReceiveListener.enemy != null)
@@ -64,7 +64,7 @@ public class ServerSupport extends Server {
             String[] servername = formattedText.split("§6");
             String serveroutput = servername[servername.length-1];
             serveroutput = serveroutput.substring(0,serveroutput.length()-4);
-            TimoliaAddon.getINSTANCE().setLatestserver(serveroutput);
+            TimoliaAddon.getInstance().setLatestServer(serveroutput);
         }
     }
 
@@ -90,13 +90,13 @@ public class ServerSupport extends Server {
         }
 
         if (clean.contains("Mapvoting") && clean.contains("»") && clean.contains("beendet")) {
-            String[] mapname = formatted.split("§6");
-            String mapoutput = mapname[mapname.length-1];
+            String[] mapName = formatted.split("§6");
+            String mapoutput = mapName[mapName.length-1];
             mapoutput = mapoutput.substring(0,mapoutput.length()-5);
             latestMap = mapoutput;
 
-            if (TimoliaAddon.getINSTANCE().isMapAnswer()) {
-                TimoliaAddon.getINSTANCE().setMapAnswer(false);
+            if (TimoliaAddon.getInstance().isMapAnswer()) {
+                TimoliaAddon.getInstance().setMapAnswer(false);
             }
         } return ChatDisplayAction.NORMAL;
     }

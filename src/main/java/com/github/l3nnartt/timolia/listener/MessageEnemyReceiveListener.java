@@ -13,13 +13,13 @@ public class MessageEnemyReceiveListener implements MessageReceiveEvent {
     public boolean onReceive(String s, String strippedMessage) {
 
         if (strippedMessage.contains("Mapvoting") && strippedMessage.contains("»") && strippedMessage.contains("beendet")) {
-            String[] mapname = s.split("§6");
-            String mapoutput = mapname[mapname.length-1];
+            String[] mapName = s.split("§6");
+            String mapoutput = mapName[mapName.length-1];
             mapoutput = mapoutput.substring(0,mapoutput.length()-5);
             latestMap = mapoutput;
 
-            if (TimoliaAddon.INSTANCE.mapAnswer) {
-                TimoliaAddon.INSTANCE.mapAnswer = false;
+            if (TimoliaAddon.instance.mapAnswer) {
+                TimoliaAddon.instance.mapAnswer = false;
                 return false;
             }
         }
@@ -45,7 +45,6 @@ public class MessageEnemyReceiveListener implements MessageReceiveEvent {
                 enemy = null;
                 kit = null;
             }
-
         } return false;
     }
 }

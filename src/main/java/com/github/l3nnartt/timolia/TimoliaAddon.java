@@ -2,7 +2,7 @@ package com.github.l3nnartt.timolia;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.github.l3nnartt.timolia.config.AddonConfig;
+import com.github.l3nnartt.timolia.config.ServerConfig;
 import com.github.l3nnartt.timolia.listener.MessageEnemyReceiveListener;
 import com.github.l3nnartt.timolia.listener.TablistHeaderListener;
 import com.github.l3nnartt.timolia.modules.ServerSupport;
@@ -12,28 +12,27 @@ import java.util.List;
 
 public class TimoliaAddon extends LabyModAddon {
 
-    public static TimoliaAddon INSTANCE;
-    public String latestserver = null;
-    public boolean mapAnswer = false;
-    public String[] servers;
+    public static TimoliaAddon instance;
+    public String latestServer;
+    public boolean mapAnswer;
     public Gson gson;
-    public AddonConfig addonConfig;
+    public ServerConfig addonConfig;
 
     @Override
     public void onEnable() {
-        INSTANCE = this;
+        instance = this;
         gson = new GsonBuilder().setPrettyPrinting().create();
-        addonConfig = AddonConfig.read();
+        addonConfig = ServerConfig.read();
 
-        //Enable Message
-        System.out.println("Timolia-Addon enabled!");
-
-        //Listener
+        // Listener
         api.getEventManager().register(new TablistHeaderListener());
         api.getEventManager().register(new MessageEnemyReceiveListener());
 
-        //Modules
+        // Modules
         api.registerServerSupport(this, new ServerSupport());
+
+        // start debug
+        getLogger("Addon successful activated");
     }
 
     @Override
@@ -46,16 +45,20 @@ public class TimoliaAddon extends LabyModAddon {
 
     }
 
-    public static TimoliaAddon getINSTANCE() {
-        return INSTANCE;
+    public static void getLogger(String logMessage) {
+        System.out.println("[Timolia] " + logMessage);
     }
 
-    public String getLatestserver() {
-        return latestserver;
+    public static TimoliaAddon getInstance() {
+        return instance;
     }
 
-    public void setLatestserver(String latestserver) {
-        this.latestserver = latestserver;
+    public String getLatestServer() {
+        return latestServer;
+    }
+
+    public void setLatestServer(String latestServer) {
+        this.latestServer = latestServer;
     }
 
     public boolean isMapAnswer() {
@@ -66,7 +69,7 @@ public class TimoliaAddon extends LabyModAddon {
         this.mapAnswer = mapAnswer;
     }
 
-    public AddonConfig getAddonConfig() {
+    public ServerConfig getAddonConfig() {
         return addonConfig;
     }
 }
