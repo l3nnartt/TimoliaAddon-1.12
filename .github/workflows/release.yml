@@ -1,13 +1,11 @@
-name: TimoliaAddon
+name: Build Addon
 
 on:
   push:
     branches:
-    - master
     - main
   pull_request:
     branches:
-    - master
     - main
 
 jobs:

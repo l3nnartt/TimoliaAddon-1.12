@@ -1,10 +1,10 @@
 {
   "uuid": "%uuid%",
   "name": "Timolia",
-  "mainClass": "de.labymod.lennart.TimoliaAddon",
-  "description": "This Addon adds some Server Support Features for Timolia.de",
-  "version": 1,
+  "mainClass": "com.github.l3nnartt.timolia.TimoliaAddon",
+  "description": "This addon adds some Server Support Features for Timolia.de",
+  "version": 4,
   "author": "L3nnart_",
   "category": 3,
-  "icon": "https://i.imgur.com/NkFEsHW.png"
+  "icon": "https://dl.lennartloesche.de/karmatop/logo.png"
 }
