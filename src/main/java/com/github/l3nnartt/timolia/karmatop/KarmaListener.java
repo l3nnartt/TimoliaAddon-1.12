@@ -13,22 +13,30 @@ public class KarmaListener implements MessageReceiveEvent {
 
     @Override
     public boolean onReceive(String s, String strippedMessage) {
+        TimoliaAddon.getLogger("hoere auf karma");
         if (TimoliaAddon.getInstance().isEnabledKarmaUpdater()) {
+            TimoliaAddon.getLogger("enabled karmaupdater");
+            TimoliaAddon.getLogger("s" + s);
+            TimoliaAddon.getLogger("strippedMessage" + strippedMessage);
             if (s.contains("Deine Erfolgspunkte-Informationen")) return true;
+            TimoliaAddon.getLogger("erstes if");
             if (s.contains("Erfolgspunkte") && s.contains("│") && s.contains(":")) {
+                TimoliaAddon.getLogger("zweites if");
                 if (s.contains("-")) return false;
-                String[] karmapunkte = s.split("§6");
-                String karmaoutput = karmapunkte[karmapunkte.length - 1];
+                TimoliaAddon.getLogger("drittes if");
+                String[] karmaPunkte = s.split("§6");
+                String karmaoutput = karmaPunkte[karmaPunkte.length - 1];
                 karmaoutput = karmaoutput.substring(0, karmaoutput.length() - 2);
                 karma = karmaoutput;
+                TimoliaAddon.getLogger("karma" + karma);
 
                 if (TimoliaAddon.getInstance().getAuthenticator().authenticate()) {
+                    TimoliaAddon.getLogger("auth");
                     TimoliaAddon.getInstance().getExService().execute(() -> {
+                        TimoliaAddon.getLogger("try");
                         try {
-                            HttpURLConnection con = (HttpURLConnection) (new URL(
-                                    "http://dl.lennartloesche.de/karmatop/auth.php?name=" + LabyMod.getInstance().getLabyModAPI().getPlayerUsername() + "&karma=" + karma + "&uuid=" + LabyMod.getInstance().getLabyModAPI().getPlayerUUID())).openConnection();
-                            con.setRequestProperty("User-Agent",
-                                    "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
+                            HttpURLConnection con = (HttpURLConnection) (new URL("http://dl.lennartloesche.de/karmatop/auth.php?name=" + LabyMod.getInstance().getLabyModAPI().getPlayerUsername() + "&karma=" + karma + "&uuid=" + LabyMod.getInstance().getLabyModAPI().getPlayerUUID())).openConnection();
+                            con.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
                             con.connect();
                             int code = con.getResponseCode();
                             if (code == 200) {
@@ -44,6 +52,7 @@ public class KarmaListener implements MessageReceiveEvent {
 
                 if (TimoliaAddon.getInstance().isKarmaAnswer()) {
                     TimoliaAddon.getInstance().setKarmaAnswer(false);
+                    TimoliaAddon.getLogger("höre nicht mehr");
                     return true;
                 }
             }

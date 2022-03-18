@@ -10,7 +10,12 @@ import com.github.l3nnartt.timolia.listener.MessageEnemyReceiveListener;
 import com.github.l3nnartt.timolia.listener.TablistHeaderListener;
 import com.github.l3nnartt.timolia.modules.ServerSupport;
 import net.labymod.api.LabyModAddon;
+import net.labymod.settings.elements.BooleanElement;
+import net.labymod.settings.elements.ControlElement;
+import net.labymod.settings.elements.HeaderElement;
 import net.labymod.settings.elements.SettingsElement;
+import net.labymod.utils.Material;
+
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -36,10 +41,13 @@ public class TimoliaAddon extends LabyModAddon {
         instance = this;
 
         // Authenticator
+        getLogger("auth");
         authenticator = new Authenticator();
 
         // Karmatop
+        getLogger("karmalistener");
         api.getEventManager().register(new KarmaListener());
+        getLogger("karmaupdater");
         api.getEventManager().registerOnJoin(new KarmaUpdater());
 
         gson = new GsonBuilder().setPrettyPrinting().create();
@@ -58,12 +66,13 @@ public class TimoliaAddon extends LabyModAddon {
 
     @Override
     public void loadConfig() {
-
+        this.enabledKarmaUpdater = !getConfig().has("enabledKarmaUpdater") || getConfig().get("enabledKarmaUpdater").getAsBoolean();
     }
 
     @Override
-    protected void fillSettings(List<SettingsElement> list) {
-
+    protected void fillSettings(List<SettingsElement> subSettings) {
+        subSettings.add(new HeaderElement("Allgemein"));
+        subSettings.add(new BooleanElement("KarmaUpdater", this, new ControlElement.IconData(Material.EXP_BOTTLE), "enabledKarmaUpdater", this.enabledKarmaUpdater));
     }
 
     public ExecutorService getExService() {
@@ -87,7 +96,7 @@ public class TimoliaAddon extends LabyModAddon {
     }
 
     public static void getLogger(String logMessage) {
-        System.out.println("[Timolia] " + logMessage);
+        System.out.println("[TimoliaAddon] " + logMessage);
     }
 
     public static TimoliaAddon getInstance() {
