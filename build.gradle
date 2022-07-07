@@ -9,7 +9,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-group = "com.github.l3nnartt.timolia"
+group = "com.github.l3nnartt"
 archivesBaseName = "Timolia"
 
 sourceCompatibility = targetCompatibility = '1.8'
