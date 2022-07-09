@@ -1,7 +1,5 @@
 # TimoliaAddon-1.12
 
-[![Build Addon](https://github.com/l3nnartt/TimoliaAddon-1.12/actions/workflows/release.yml/badge.svg)](https://github.com/l3nnartt/TimoliaAddon-1.12/actions/workflows/release.yml)
-
 ## Setup Workspace
 ```
 gradlew setupDecompWorkspace 
